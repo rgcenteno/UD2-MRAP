@@ -1,0 +1,8 @@
+site_name: "Práctica S3 con CRR Y MRAP"
+theme:
+  name: material
+  locale: "es"
+nav:
+    - Enunciado: "index.md"
+    - Práctica: "UD2-CRR-practica.md"
+    - Formato entrega: "Entrega.md"
