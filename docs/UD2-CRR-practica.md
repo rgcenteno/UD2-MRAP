@@ -6,7 +6,7 @@ Vamos a implementar la siguiente arquitectura usando CRR y MRAP:
 
 ![image](imgs/practica-mrap.png)
 
-Una cosa a tener en cuenta: cuando pongamos `$username` en el nombre sustituimos por la primera letra de nuestro nombre, primera letra del apellido y segundo apellido completo. Por ejemplo, en mi caso que soy Rafael González Centeno `$username = rgcenteno`Esto permitirá ver la autoría de las prácticas
+Una cosa a tener en cuenta: cuando pongamos `$username` en el nombre sustituimos por la primera letra de nuestro nombre (si tenemos varios nombres, sólo usaremos la primera letra del primer nombre), primera letra del apellido y segundo apellido completo (si no tienes segundo apellido, pon el primer apellido completo). Por ejemplo, en mi caso que soy Rafael González Centeno `$username = rgcenteno`Esto permitirá ver la autoría de las prácticas
 
 ## Creación de VPC y sub-redes públicas host de acceso
 
@@ -29,9 +29,9 @@ Una cosa a tener en cuenta: cuando pongamos `$username` en el nombre sustituimos
    - Rol de IAM: LabRole
 
 > LabRole es una política de identidad que ya tiene permisos sobre S3. Lo recomendable es usar políticas de identidad cuando sean accesos desde la misma cuenta y políticas de recursos si necesitamos habilitar un permiso para un rol o usuario externo. 
-> 
+>
 > Con esta política hacemos una gestión de permisos alineada con los principios de **least privilege (mínimo privilegio)** y **centralized access management (gestión centralizada de accesos)** de AWS IAM que recomienda seguir la siguiente pauta:
-> 
+>
 > Priorizar el uso de IAM Roles para la concesión de permisos y recurrir a Resource-based Policies únicamente cuando sea necesario compartir recursos entre cuentas o gestionar permisos directamente sobre el recurso."
 
 ### Oregón
@@ -47,23 +47,23 @@ Una cosa a tener en cuenta: cuando pongamos `$username` en el nombre sustituimos
 5. Asigna la tabla de enrutamiento a la `SubRed-Host-Oregon-$username`
 
 6. Cree una instancia EC2 en la Región us-west-2a:
-   
+
    - Nombre: `Host-PC-Oregón-$username`
-   
+
    - AMI: Amazon Linux más actual que sea Apta para la capa gratuita
-   
+
    - Instancia t3.micro
-   
+
    - Crea un nuevo par de claves llamadas OregonKeys RSA y pem. **Guarda el fichero pem descargado!!**
-   
+
    - Establece la máquina EC2 en la subred `SubRed-Host-Oregon-$username` con IP pública
-   
+
    - Asignación automática de IP pública: Habilitar
-   
+
    - Crea una regla de seguridad llamada Permitir SSH abriendo el puerto 22 a cualquier origen
-   
+
    - Rol de IAM: LabRole
-   
+
    - Resto de campos por defecto
 
 ## Creación de bucket Principal (Virginia)
@@ -149,7 +149,7 @@ Crear regla de replicación
 - Ahora subimos al s3 de virginia dentro de la carpeta `datos` un fichero llamado `fichero.txt` con el texto "Bienvenid@s".
 
 - Comprobar que se replica en el destino para ello tenemos dos maneras:
-  
+
   - Ir al bucket de Oregón y ver que aparece el elemento
   - Abrir el objeto (fichero) creado en Virginia y en la pestaña de Administración comprobar que el Estado de replicación es `COMPLETED`
 
@@ -201,7 +201,7 @@ Pasos:
 3. Pestaña Mutirregional
 
 4. Pulsamos Crear un punto de acceso para varias regiones
-   
+
    - Nombre: `mrap-virginia-oregon-$username`
    - Agregar buckets de esta cuenta y seleccionamos ambos
    - *Desmarcamos Bloquear todo el acceso público*
