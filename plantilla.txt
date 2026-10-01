@@ -1,0 +1,222 @@
+---
+Metadata:
+  AWSToolsMetrics:
+    IaC_Generator: "arn:aws:cloudformation:us-west-2:383916704142:generatedTemplate/9a916994-ffce-4aa4-a5b5-413c92b9397b"
+Parameters:
+  KeyName:
+    Default: "OregonKeys"
+    Type: "String"
+    Description: "Name of an existing EC2 KeyPair to enable SSH access"
+Resources:
+  EC2Instance:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Instance"
+    DeletionPolicy: "Retain"
+    Properties:
+      Tenancy: "default"
+      PrivateIpAddress: "10.0.1.4"
+      MetadataOptions:
+        HttpPutResponseHopLimit: 2
+        HttpProtocolIpv6: "disabled"
+        HttpTokens: "required"
+        InstanceMetadataTags: "disabled"
+        HttpEndpoint: "enabled"
+      InstanceInitiatedShutdownBehavior: "stop"
+      BlockDeviceMappings:
+      - Ebs:
+          SnapshotId: "snap-060a991c1b33bdcf2"
+          VolumeType: "gp3"
+          Iops: 3000
+          VolumeSize: 8
+          Encrypted: false
+          DeleteOnTermination: true
+        DeviceName: "/dev/xvda"
+      PrivateDnsNameOptions:
+        EnableResourceNameDnsARecord: false
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      SecurityGroupIds:
+      - "sg-0a3e10660d3b7f3ae"
+      EbsOptimized: true
+      DisableApiTermination: false
+      SourceDestCheck: true
+      PlacementGroupName: ""
+      NetworkInterfaces:
+      - Ipv6Addresses: []
+        SecondaryPrivateIpAddressCount: 0
+        NetworkInterfaceId: "eni-0993ac9b8ac3585b2"
+        DeviceIndex: "0"
+      ImageId: "ami-075d448db8fb256af"
+      InstanceType: "t3.micro"
+      Monitoring: false
+      Tags:
+      - Value: "Host-PC-Oreg?n"
+        Key: "Name"
+      CreditSpecification:
+        CPUCredits: "unlimited"
+  EC2VPC:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VPC"
+    DeletionPolicy: "Retain"
+    Properties:
+      CidrBlock: "10.0.1.0/24"
+      EnableDnsSupport: true
+      InstanceTenancy: "default"
+      EnableDnsHostnames: false
+      Tags:
+      - Value: "LabVPC-Oregon"
+        Key: "Name"
+  S3BucketOregonrgcenteno:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::S3::Bucket"
+    DeletionPolicy: "Retain"
+    Properties:
+      AbacStatus: "Disabled"
+      PublicAccessBlockConfiguration:
+        RestrictPublicBuckets: false
+        IgnorePublicAcls: false
+        BlockPublicPolicy: false
+        BlockPublicAcls: false
+      BucketName: "oregon-rgcenteno"
+      VersioningConfiguration:
+        Status: "Enabled"
+      OwnershipControls:
+        Rules:
+        - ObjectOwnership: "BucketOwnerEnforced"
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+        - BucketKeyEnabled: true
+          BlockedEncryptionTypes:
+            EncryptionType:
+            - "SSE-C"
+          ServerSideEncryptionByDefault:
+            SSEAlgorithm: "AES256"
+  EC2VolumeAttachment:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VolumeAttachment"
+    DeletionPolicy: "Retain"
+    Properties:
+      VolumeId: "vol-05ddafc78964b5c92"
+      InstanceId: "i-0c70b4fc0793be834"
+      Device: "/dev/xvda"
+      EbsCardIndex: 0
+  EC2Volume:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Volume"
+    DeletionPolicy: "Retain"
+    Properties:
+      MultiAttachEnabled: false
+      SnapshotId: "snap-060a991c1b33bdcf2"
+      VolumeType: "gp3"
+      Encrypted: false
+      Size: 8
+      AutoEnableIO: true
+      AvailabilityZoneId: "usw2-az2"
+      AvailabilityZone: "us-west-2a"
+      Throughput: 125
+      Iops: 3000
+      Tags: []
+  EC2NetworkInterface:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkInterface"
+    DeletionPolicy: "Retain"
+    Properties:
+      SourceDestCheck: true
+      Description: ""
+      PrivateIpAddresses:
+      - PrivateIpAddress: "10.0.1.4"
+        Primary: true
+      Ipv6PrefixCount: 0
+      Ipv4Prefixes: []
+      Ipv4PrefixCount: 0
+      GroupSet:
+      - "sg-0a3e10660d3b7f3ae"
+      Ipv6Prefixes: []
+      SubnetId: "subnet-030d27ac72211e0a7"
+      Tags: []
+  EC2Subnet:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Subnet"
+    DeletionPolicy: "Retain"
+    Properties:
+      MapPublicIpOnLaunch: false
+      EnableDns64: false
+      VpcId: "vpc-00687186c7da08e9d"
+      AvailabilityZoneId: "usw2-az2"
+      PrivateDnsNameOptionsOnLaunch:
+        EnableResourceNameDnsARecord: false
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      AvailabilityZone: "us-west-2a"
+      CidrBlock: "10.0.1.0/28"
+      Ipv6Native: false
+      Tags:
+      - Value: "SubRed-Host-Oregon"
+        Key: "Name"
+  EC2SecurityGroup:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SecurityGroup"
+    DeletionPolicy: "Retain"
+    Properties:
+      GroupDescription: "Permitir SSH"
+      GroupName: "Permitir SSH"
+      VpcId: "vpc-00687186c7da08e9d"
+      SecurityGroupIngress:
+      - CidrIp: "0.0.0.0/0"
+        IpProtocol: "tcp"
+        FromPort: 22
+        ToPort: 22
+      SecurityGroupEgress:
+      - CidrIp: "0.0.0.0/0"
+        IpProtocol: "-1"
+  EC2NetworkAcl:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkAcl"
+    DeletionPolicy: "Retain"
+    Properties:
+      VpcId: "vpc-00687186c7da08e9d"
+      Tags: []
+  EC2SubnetNetworkAclAssociation:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SubnetNetworkAclAssociation"
+    DeletionPolicy: "Retain"
+    Properties:
+      NetworkAclId: "acl-05fbc60eac9f82099"
+      SubnetId: "subnet-030d27ac72211e0a7"
+  S3BucketVirginiargcenteno:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::S3::Bucket"
+    DeletionPolicy: "Retain"
+    Properties:
+      AbacStatus: "Disabled"
+      PublicAccessBlockConfiguration:
+        RestrictPublicBuckets: false
+        IgnorePublicAcls: false
+        BlockPublicPolicy: false
+        BlockPublicAcls: false
+      BucketName: "virginia-rgcenteno"
+      OwnershipControls:
+        Rules:
+        - ObjectOwnership: "BucketOwnerEnforced"
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+        - BucketKeyEnabled: true
+          BlockedEncryptionTypes:
+            EncryptionType:
+            - "SSE-C"
+          ServerSideEncryptionByDefault:
+            SSEAlgorithm: "AES256"
+      VersioningConfiguration:
+        Status: "Enabled"
+      ReplicationConfiguration:
+        Role: "arn:aws:iam::383916704142:role/myS3Role"
+        Rules:
+        - Status: "Enabled"
+          Destination:
+            Bucket: "arn:aws:s3:::oregon-rgcenteno"
+          Id: "Replicar datos en Oreg?n"
+          DeleteMarkerReplication:
+            Status: "Disabled"
+          Filter:
+            Prefix: "datos/"
+          Priority: 0

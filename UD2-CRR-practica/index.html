@@ -1,0 +1,1013 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../Entrega/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Práctica - Práctica S3 con CRR Y MRAP</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practica" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Práctica S3 con CRR Y MRAP" class="md-header__button md-logo" aria-label="Práctica S3 con CRR Y MRAP" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Práctica S3 con CRR Y MRAP
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Práctica
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo light"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo light" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Práctica S3 con CRR Y MRAP" class="md-nav__button md-logo" aria-label="Práctica S3 con CRR Y MRAP" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Práctica S3 con CRR Y MRAP
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enunciado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práctica
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práctica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-vpc-y-sub-redes-publicas-host-de-acceso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creación de VPC y sub-redes públicas host de acceso
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creación de VPC y sub-redes públicas host de acceso">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virginia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virginia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oregon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oregón
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-bucket-principal-virginia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creación de bucket Principal (Virginia)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-bucket-de-respaldo-oregon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crear bucket de respaldo (Oregón)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#habilitar-replicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Habilitar replicación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comprobando-acceso-desde-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprobando acceso desde hosts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comprobando acceso desde hosts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#host-de-virginia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host de Virginia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-de-oregon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host de Oregón
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-el-punto-de-acceso-multi-region" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crear el punto de acceso multi-región
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testear-el-funcionamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testear el funcionamiento
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testear el funcionamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#host-de-virginia_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host de Virginia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-de-oregon_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host de Oregón
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Entrega/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formato entrega
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-vpc-y-sub-redes-publicas-host-de-acceso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creación de VPC y sub-redes públicas host de acceso
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creación de VPC y sub-redes públicas host de acceso">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virginia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virginia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oregon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oregón
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-bucket-principal-virginia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creación de bucket Principal (Virginia)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-bucket-de-respaldo-oregon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crear bucket de respaldo (Oregón)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#habilitar-replicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Habilitar replicación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comprobando-acceso-desde-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprobando acceso desde hosts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comprobando acceso desde hosts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#host-de-virginia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host de Virginia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-de-oregon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host de Oregón
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-el-punto-de-acceso-multi-region" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crear el punto de acceso multi-región
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testear-el-funcionamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testear el funcionamiento
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testear el funcionamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#host-de-virginia_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host de Virginia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-de-oregon_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host de Oregón
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="practica">Práctica</h1>
+<p>La duración estimada de esta práctica es de 2h.</p>
+<p>Vamos a implementar la siguiente arquitectura usando CRR y MRAP:</p>
+<p><img alt="image" src="../imgs/practica-mrap.png" /></p>
+<p>Una cosa a tener en cuenta: cuando pongamos <code>$username</code> en el nombre sustituimos por la primera letra de nuestro nombre (si tenemos varios nombres, sólo usaremos la primera letra del primer nombre), primera letra del apellido y segundo apellido completo (si no tienes segundo apellido, pon el primer apellido completo). Por ejemplo, en mi caso que soy Rafael González Centeno <code>$username = rgcenteno</code>Esto permitirá ver la autoría de las prácticas</p>
+<h2 id="creacion-de-vpc-y-sub-redes-publicas-host-de-acceso">Creación de VPC y sub-redes públicas host de acceso</h2>
+<h3 id="virginia">Virginia</h3>
+<ol>
+<li>Crea una VPC llamada <code>LabVPC-Virginia-$username</code> que se encuentre en la region <strong>us-east-1</strong>  trabaje en un bloque CIDR 10.0.0.0/24</li>
+<li>Cree una subred pública llamada <code>SubRed-Host-Virginia-$username</code> en la zona de disponibilidad us-east-a1 CIDR 10.0.0.0/28</li>
+<li>Crea una Puerta de enlace de internet, llámala <code>ig-Virginia-$username</code> y asignala a la VPC LabVPC-Virginia.</li>
+<li>Crea una tabla de enrutamiento llamada <code>tr-pública-Virginia-$username</code> y asignala la VPC. Añade una ruta con Destino: 0.0.0.0/0 que salga por la puerta de enlace de Internet recién creada.</li>
+<li>Asigna la tabla de enrutamiento a la SubRed-Host-Virginia-$username.</li>
+<li>Cree una instancia EC2 en la Región us-east-1:</li>
+<li>Nombre: <code>Host-PC-Virginia-$username</code></li>
+<li>AMI: Amazon Linux más actual que sea Apta para la capa gratuita</li>
+<li>Instancia t3.micro</li>
+<li>Utiliza el par de claves vockey</li>
+<li>Establece la máquina EC2 en la subred <code>SubRed-Host-Virginia-$username</code> con IP pública.</li>
+<li>Asignación automática de IP pública: Habilitar</li>
+<li>Crea una regla de seguridad llamada Permitir SSH abriendo el puerto 22 a cualquier origen</li>
+<li>Resto de campos por defecto</li>
+<li>Rol de IAM: LabRole</li>
+</ol>
+<blockquote>
+<p>LabRole es una política de identidad que ya tiene permisos sobre S3. Lo recomendable es usar políticas de identidad cuando sean accesos desde la misma cuenta y políticas de recursos si necesitamos habilitar un permiso para un rol o usuario externo. </p>
+<p>Con esta política hacemos una gestión de permisos alineada con los principios de <strong>least privilege (mínimo privilegio)</strong> y <strong>centralized access management (gestión centralizada de accesos)</strong> de AWS IAM que recomienda seguir la siguiente pauta:</p>
+<p>Priorizar el uso de IAM Roles para la concesión de permisos y recurrir a Resource-based Policies únicamente cuando sea necesario compartir recursos entre cuentas o gestionar permisos directamente sobre el recurso."</p>
+</blockquote>
+<h3 id="oregon">Oregón</h3>
+<ol>
+<li>
+<p>Crea una VPC llamada <code>LabVPC-Oregon-$username</code> que se encuentre en la region <strong>us-west-2</strong>  trabaje en un bloque CIDR 10.0.1.0/24</p>
+</li>
+<li>
+<p>Cree una subred pública llamada <code>SubRed-Host-Oregon-$username</code> en la zona de disponibilidad us-west-2a CIDR 10.0.1.0/28</p>
+</li>
+<li>
+<p>Crea una Puerta de enlace de internet, llámala <code>ig-Oregon-$username</code> y asignala a la VPC LabVPC-Oregon</p>
+</li>
+<li>
+<p>Crea una tabla de enrutamiento llamada <code>tr-pública-Oregón-$username</code> y asignala la VPC. Añade una ruta con Destino: 0.0.0.0/0 que salga por la puerta de enlace de Internet recién creada</p>
+</li>
+<li>
+<p>Asigna la tabla de enrutamiento a la <code>SubRed-Host-Oregon-$username</code></p>
+</li>
+<li>
+<p>Cree una instancia EC2 en la Región us-west-2a:</p>
+</li>
+<li>
+<p>Nombre: <code>Host-PC-Oregón-$username</code></p>
+</li>
+<li>
+<p>AMI: Amazon Linux más actual que sea Apta para la capa gratuita</p>
+</li>
+<li>
+<p>Instancia t3.micro</p>
+</li>
+<li>
+<p>Crea un nuevo par de claves llamadas OregonKeys RSA y pem. <strong>Guarda el fichero pem descargado!!</strong></p>
+</li>
+<li>
+<p>Establece la máquina EC2 en la subred <code>SubRed-Host-Oregon-$username</code> con IP pública</p>
+</li>
+<li>
+<p>Asignación automática de IP pública: Habilitar</p>
+</li>
+<li>
+<p>Crea una regla de seguridad llamada Permitir SSH abriendo el puerto 22 a cualquier origen</p>
+</li>
+<li>
+<p>Rol de IAM: LabRole</p>
+</li>
+<li>
+<p>Resto de campos por defecto</p>
+</li>
+</ol>
+<h2 id="creacion-de-bucket-principal-virginia">Creación de bucket Principal (Virginia)</h2>
+<p>Crear bucket main
+Creamos un bucket en Virginia llamado <code>Virginia-$username-$cadena_random</code></p>
+<ul>
+<li>ACL deshabilitadas</li>
+<li>Marcamos el checkbox "<strong>Bloquear <em>todo</em> el acceso público</strong>" (se conseguirá el acceso mediante roles o políticas)</li>
+<li>Habilitamos control de versiones del bucket</li>
+<li>resto por defecto</li>
+<li>Subimos un fichero info.txt al bucket con el contenido: "Servidor de Virginia"</li>
+<li>Crear una carpeta datos en la raíz del bucket</li>
+</ul>
+<h2 id="crear-bucket-de-respaldo-oregon">Crear bucket de respaldo (Oregón)</h2>
+<p>Creamos un bucket en Oregon llamado <code>Oregon-$username-$cadena_random</code></p>
+<ul>
+<li>ACL deshabilitadas</li>
+<li>Marcamos el checkbox "<strong>Bloquear <em>todo</em> el acceso público</strong>" (se conseguirá el acceso mediante roles o políticas)</li>
+<li>Habilitamos control de versiones del bucket</li>
+<li>resto por defecto</li>
+<li>Subimos un fichero info.txt al bucket con el contenido: "Servidor de Oregón"</li>
+<li>Crear una carpeta datos en la raíz del bucket</li>
+</ul>
+<h2 id="habilitar-replicacion">Habilitar replicación</h2>
+<p>Habilitamos replicación en Norte Virginia sobre Oregon <strong>solo para la carpeta datos</strong>
+Crear regla de replicación</p>
+<ul>
+<li>
+<p>Nombre: Replicar datos en Oregón</p>
+</li>
+<li>
+<p>Origen: Virginia</p>
+</li>
+<li>
+<p>Prefijo: datos/ (Esto hace que sólo se aplique para la carpeta datos/)</p>
+</li>
+<li>
+<p>Destino: Oregon</p>
+</li>
+<li>
+<p>Se debería crear un rol pero no nos deja (es una limitación de los labs). Asociamos el rol <code>LabRole</code>. A nivel informativo, el Rol que deberíamos crear para permitir la replicación podría llamarse <code>Replicar-s3-virginia-oregon</code> y sería algo similar a esto:</p>
+</li>
+</ul>
+<p><strong>Entidad de confianza</strong>: EC2</p>
+<p><strong>Pólitica:</strong></p>
+<pre><code class="language-json">{
+ &quot;Version&quot;: &quot;2012-10-17&quot;,
+ &quot;Statement&quot;: [
+ {
+ &quot;Sid&quot;: &quot;ReadSourceBucketConfiguration&quot;,
+ &quot;Effect&quot;: &quot;Allow&quot;,
+ &quot;Action&quot;: [
+ &quot;s3:GetReplicationConfiguration&quot;,
+ &quot;s3:ListBucket&quot;
+ ],
+ &quot;Resource&quot;: &quot;arn:aws:s3:::virginia-rgcenteno&quot;
+ },
+ {
+ &quot;Sid&quot;: &quot;ReadSourceObjects&quot;,
+ &quot;Effect&quot;: &quot;Allow&quot;,
+ &quot;Action&quot;: [
+ &quot;s3:GetObjectVersion&quot;,
+ &quot;s3:GetObjectVersionAcl&quot;,
+ &quot;s3:GetObjectVersionTagging&quot;
+ ],
+ &quot;Resource&quot;: &quot;arn:aws:s3:::virginia-rgcenteno/*&quot;
+ },
+ {
+ &quot;Sid&quot;: &quot;ReplicateToDestinationBucket&quot;,
+ &quot;Effect&quot;: &quot;Allow&quot;,
+ &quot;Action&quot;: [
+ &quot;s3:ReplicateObject&quot;,
+ &quot;s3:ReplicateDelete&quot;,
+ &quot;s3:ReplicateTags&quot;,
+ &quot;s3:ObjectOwnerOverrideToBucketOwner&quot;
+ ],
+ &quot;Resource&quot;: &quot;arn:aws:s3:::oregon-rgcenteno/*&quot;
+ }
+ ]
+}
+</code></pre>
+<ul>
+<li>
+<p>Ahora subimos al s3 de virginia dentro de la carpeta <code>datos</code> un fichero llamado <code>fichero.txt</code> con el texto "Bienvenid@s".</p>
+</li>
+<li>
+<p>Comprobar que se replica en el destino para ello tenemos dos maneras:</p>
+</li>
+<li>
+<p>Ir al bucket de Oregón y ver que aparece el elemento</p>
+</li>
+<li>Abrir el objeto (fichero) creado en Virginia y en la pestaña de Administración comprobar que el Estado de replicación es <code>COMPLETED</code></li>
+</ul>
+<h2 id="comprobando-acceso-desde-hosts">Comprobando acceso desde hosts</h2>
+<h3 id="host-de-virginia">Host de Virginia</h3>
+<p>Para conectarnos a este host podemos usar el tutorial estándar de conexión a instancias EC2. Lo puedes localizar en la página donde arrancas el lab pulsando en el enlace "<em>Acceso a instancias de ec2</em>"</p>
+<p>Una vez conectados ejecutamos los siguientes comandos para comprobar que tenemos acceso a los ficheros. Sustituye <code>s3://virginia-s3-rgcenteno</code>por el nombre de tu bucket en Virginia.</p>
+<pre><code class="language-sh">[ec2-user@ip-10-0-0-4 ~]$ aws s3 cp s3://virginia-s3-rgcenteno/info.txt -
+Servidor de Virginia
+
+[ec2-user@ip-10-0-0-4 ~]$ aws s3 cp s3://virginia-s3-rgcenteno/datos/fichero.txt -
+Bienvenid@s
+</code></pre>
+<p>Comprobamos también que podemos obtener los ficheros de Oregón:</p>
+<pre><code class="language-bash">[ec2-user@ip-10-0-0-4 ~]$ aws s3 cp s3://oregon-s3-rgcenteno/info.txt -
+Servidor de Oregón
+[ec2-user@ip-10-0-0-4 ~]$ aws s3 cp s3://oregon-s3-rgcenteno/datos/fichero.txt -
+Bienvenid@s
+</code></pre>
+<p>No cierres la consola, la usaremos más adelante.</p>
+<h3 id="host-de-oregon">Host de Oregón</h3>
+<p>Para conectarnos al host de Oregón tenemos que hacer los mismos pasos que en el caso anterior pero usando el fichero pem descargado cuando lo generamos (<code>OregonKeys.pem</code>). Hacemos los mismos pasos que con Virginia para comprobar que todo funciona correctamente.</p>
+<p>Ahora mismo tenemos un bucket en Virginia que se replica en otro bucket que se encuentra en la región de Oregón. Tenemos una máquina en Virginia y otra en Oregón que se pueden conectar a los buckets y leer la información.</p>
+<p>Tampoco cierres esta consola, la usaremos más adelante.</p>
+<h2 id="crear-el-punto-de-acceso-multi-region">Crear el punto de acceso multi-región</h2>
+<p>Vamos a crear un <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiRegionAccessPoints.html">punto de acceso multi-región (MRAP)</a>. Esta es una herramienta muy útil que nos puede ayudar a reducir la latencia de acceso a datos S3 seleccionando para cada petición el bucket con menor tiempo de acceso. También permite configuraciones activo-pasivo que nos permiten aumentar la disponibilidad.</p>
+<p>Pasos:</p>
+<ol>
+<li>
+<p>En Servicios vamos a S3</p>
+</li>
+<li>
+<p>Menú lateral izquierdo Seguridad y administración de acceso &gt; Puntos de acceso</p>
+</li>
+<li>
+<p>Pestaña Mutirregional</p>
+</li>
+<li>
+<p>Pulsamos Crear un punto de acceso para varias regiones</p>
+</li>
+<li>
+<p>Nombre: <code>mrap-virginia-oregon-$username</code></p>
+</li>
+<li>Agregar buckets de esta cuenta y seleccionamos ambos</li>
+<li><em>Desmarcamos Bloquear todo el acceso público</em></li>
+<li>Pulsamos el botón Crear un punto de acceso para varias regiones</li>
+</ol>
+<p>Una vez hechos estos pasos esperamos varios minutos a que el MRAP esté activo. Una vez esté activo pinchamos sobre el MRAP y copiamos el arn del mismo.</p>
+<h2 id="testear-el-funcionamiento">Testear el funcionamiento</h2>
+<p>Ahora podemos acceder a los recursos en el bucket poniendo el nombre del MRAP en vez de accediendo al bucket individualmente. El MRAP, dependiendo de la ubicación de la petición usará el bucket con una latencia menor. Esto es muy útil si en la empresa tenemos varias ubicaciones diferentes y queremos reducir la latencia de acceso para cada una de nuestras ubicaciones.</p>
+<p>Vamos a testear el comportamiento.</p>
+<h3 id="host-de-virginia_1">Host de Virginia</h3>
+<p>Desde la consola del host de Virginia ejecutamos el siguiente comando (recuerda cambiar el arn de mi rmap por el tuyo) para recuperar un fichero de documentación:</p>
+<pre><code class="language-bash">[ec2-user@ip-10-0-0-4 ~]$ aws s3 cp s3://arn:aws:s3::267605637056:accesspoint/mth3h9rq7he1k.mrap/datos/fichero.txt -
+Bienvenid@s
+</code></pre>
+<p>Vemos que nos devuelve el contenido del fichero. En realidad no sabemos cuál ya que el MRAP se encarga de enviar la petición al S3 con menor latencia. Si ejecutamos el siguiente comando:</p>
+<pre><code class="language-bash">[ec2-user@ip-10-0-0-4 ~]$ aws s3 cp s3://arn:aws:s3::267605637056:accesspoint/mth3h9rq7he1k.mrap/info.txt -
+Servidor de Virginia
+</code></pre>
+<p>Vemos que al servidor de Virginia le está contestando el Servidor S3 ubicado en Virginia.</p>
+<h3 id="host-de-oregon_1">Host de Oregón</h3>
+<p>Ahora vamos a hacer las mismas pruebas con la consola del Host de Oregón (recuerda cambiar el arn del MRAP):</p>
+<pre><code class="language-bash">[ec2-user@ip-10-0-1-4 ~]$ aws s3 cp s3://arn:aws:s3::267605637056:accesspoint/mth3h9rq7he1k.mrap/datos/fichero.txt -
+Bienvenid@s
+</code></pre>
+<p>Si solicitamos el fichero info.txt</p>
+<pre><code class="language-bash">[ec2-user@ip-10-0-1-4 ~]$ aws s3 cp s3://arn:aws:s3::267605637056:accesspoint/mth3h9rq7he1k.mrap/info.txt -
+Servidor de Oregón
+</code></pre>
+<p>Obtenemos el servidor de Oregón que es el que está más cerca del dispositivo y por lo tanto el que menor latencia tiene.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
