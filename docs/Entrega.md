@@ -14,3 +14,5 @@ PDF con pequeño texto explicativo y las siguientes capturas. En todas las captu
 **Nombre del pdf:** `$username-MRAP.pdf`
 
 
+
+> Una vez realizada la entrega, no te olvides de eliminar los recursos que has creado en el laboratorio para evitar costes innecesarios en la cuenta.
